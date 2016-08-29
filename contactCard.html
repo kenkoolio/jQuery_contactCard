@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Cards</title>
+    <meta name="description" content="Contact Cards">
+    <link rel="stylesheet" type="text/css" href="contactCard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+
+      function infoString(){
+        var string =
+          '<div class="contactCardClass"><h2 class="cardName">' + $('#firstName').val() + ' ' + $('#lastName').val() + '</h2><span class="infoSpan"><p class="cardDescription">' + $('#description').val()+ '</p></span><p class="clickHere">Click for description!</p></div>' ;
+        return string;
+      };
+
+      function createContact(){
+        $('#contactCardDiv').append(infoString)
+      };
+
+      function toggleDescription(){
+        $('#contactCardDiv').on('click','.contactCardClass',function(){
+          $(this).children().children('.cardDescription').toggle();
+        });
+      };
+
+      function toggleName(){
+        $('#contactCardDiv').on('click','.contactCardClass', function(){
+          $(this).children('h2, .clickHere').toggle();
+        });
+      };
+
+
+
+      $(function(){
+
+        $('#form').submit(function(){
+
+          createContact();
+
+          return false;
+        });
+
+        toggleDescription();
+        toggleName();
+
+      }); //close jQuery
+
+
+
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="userForm">
+        <form id="form">
+          <label for="firstName">First Name:
+            <input id="firstName" type="text" name="First_Name" placeholder="First Name">
+          </label>
+
+          <label for="lastName">Last Name:
+            <input id="lastName" type="text" name="Last_Name" placeholder="Last Name">
+          </label>
+
+          <label for="description">Description:
+          <textarea id="description" name="Description" placeholder="Enter Description"></textarea>
+          </label>
+
+          <label for="submit">
+            <input id="submit" type="submit" value="Add User">
+          </label>
+        </form>
+      </div><!-- userForm -->
+
+      <div id="contactCardDiv">
+
+      </div><!-- contactCard-->
+    </div><!-- container -->
+  </body>
+</html>

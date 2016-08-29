@@ -1,0 +1,41 @@
+label{
+  display: block;
+  margin-bottom: 20px;
+}
+
+#description{
+  display: block;
+  width: 230px;
+}
+
+#userForm{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+#contactCardDiv{
+  display: inline-block;
+}
+
+
+.contactCardClass {
+  width: 500px;
+  height: 400px;
+  border: 2px dashed black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cardName {
+  margin-top: 150px;
+}
+
+.infoSpan {
+  display: block;
+}
+
+.cardDescription {
+  display: none;
+  margin-top: 150px;
+}
